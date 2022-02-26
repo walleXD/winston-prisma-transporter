@@ -6,3 +6,5 @@ node_modules
 .swcrc.js
 tsconfig.json
 tsconfig.build.json
+pnpm-lock.yaml
+src
