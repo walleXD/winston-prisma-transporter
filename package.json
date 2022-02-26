@@ -1,0 +1,42 @@
+{
+  "name": "winston-prisma-transporter",
+  "version": "0.1.0",
+  "description": "Transport Winston logger to Prisma",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "swc ./src/index.ts -d dist/cjs -C module.type=commonjs jsc.target=es2018",
+    "build:es": "swc ./src/index.ts --out-dir dist/es",
+    "build:types": "tsc -p tsconfig.build.json",
+    "build:pkg": "pnpm run typecheck && pnpm run build:types && pnpm run build:es && pnpm run build",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "winston",
+    "prisma",
+    "transport"
+  ],
+  "author": "walleXD <6826840+walleXD@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "winston-transport": "^4"
+  },
+  "peerDependencies": {
+    "@prisma/client": "^3",
+    "winston": "^3"
+  },
+  "devDependencies": {
+    "@prisma/client": "^3.10.0",
+    "@swc/cli": "^0.1.55",
+    "@swc/core": "^1.2.145",
+    "@swc/jest": "^0.2.20",
+    "@types/node": "^16",
+    "deepmerge": "^4.2.2",
+    "jest": "^27.5.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.5",
+    "winston": "^3.6.0"
+  }
+}

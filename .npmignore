@@ -1,0 +1,8 @@
+dist/*.tsbuildinfo
+dist/types/index.d.ts.map
+node_modules
+.gitignore
+.nvmrc
+.swcrc.js
+tsconfig.json
+tsconfig.build.json
