@@ -11,7 +11,8 @@
     "build:es": "swc ./src/index.ts --out-dir dist/es",
     "build:types": "tsc -p tsconfig.build.json",
     "build:pkg": "pnpm run typecheck && pnpm run build:types && pnpm run build:es && pnpm run build",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "publish:pkg": "pnpm run build:pkg && pnpm publish"
   },
   "keywords": [
     "winston",
