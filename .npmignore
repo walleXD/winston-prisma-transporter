@@ -8,3 +8,4 @@ tsconfig.json
 tsconfig.build.json
 pnpm-lock.yaml
 src
+.swc

@@ -1,10 +1,18 @@
 {
   "name": "winston-prisma-transporter",
   "version": "0.1.1",
-  "description": "Transport Winston logger to Prisma",
+  "description": "Transport Winston logger with Prisma",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/walleXD/winston-prisma-transporter.git"
+  },
+  "homepage": "https://github.com/walleXD/winston-prisma-transporter",
+  "bugs": {
+    "url": "https://github.com/walleXD/winston-prisma-transporter/issues"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "swc ./src/index.ts -d dist/cjs -C module.type=commonjs jsc.target=es2018",
@@ -17,7 +25,10 @@
   "keywords": [
     "winston",
     "prisma",
-    "transport"
+    "transport",
+    "mysql",
+    "mongo",
+    "postgres"
   ],
   "author": "walleXD <6826840+walleXD@users.noreply.github.com>",
   "license": "MIT",
