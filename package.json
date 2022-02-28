@@ -1,6 +1,6 @@
 {
   "name": "winston-prisma-transporter",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Transport Winston logger with Prisma",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
