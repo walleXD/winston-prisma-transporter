@@ -1,14 +1,10 @@
 // @ts-expect-error type properly created in prod
 import type { PrismaClient } from "@prisma/client";
-import Transport, { TransportStreamOptions } from "winston-transport";
+import Transport, { type TransportStreamOptions } from "winston-transport";
 
 export interface PrismaTransporterOptions extends TransportStreamOptions {
   prisma: PrismaClient;
   tableName?: string;
-  log?: (
-    info: ILogInfo,
-    callback?: (error?: Error, value?: unknown) => void
-  ) => void;
 }
 
 export interface ILogInfo {
@@ -30,19 +26,14 @@ export interface ILogInfo {
  * Create Primsa Transport plugin for Winston
  */
 export class PrismaWinstonTransporter extends Transport {
-  // private name: string;
-  private prismaClient: PrismaClient;
+  private prisma: PrismaClient;
   private tableName: string;
-  private customLogger: PrismaTransporterOptions["log"];
 
   constructor(options: PrismaTransporterOptions) {
     super(options);
 
-    // this.name = "PrismaWinstorTransporter";
-
-    this.prismaClient = options.prisma;
+    this.prisma = options.prisma;
     this.tableName = options.tableName ?? "userLog";
-    this.customLogger = options.log;
   }
 
   /**
@@ -61,9 +52,6 @@ export class PrismaWinstonTransporter extends Transport {
     info: ILogInfo,
     callback?: (error?: Error, value?: unknown) => void
   ): void {
-    if (this.customLogger) {
-      return this.customLogger(info, callback);
-    }
 
     // get log content
     const { level, message, meta } = info;
@@ -75,7 +63,7 @@ export class PrismaWinstonTransporter extends Transport {
         callback = () => {};
       }
 
-      this.prismaClient[this.tableName]
+      this.prisma[this.tableName]
         .create({
           data: {
             level,
