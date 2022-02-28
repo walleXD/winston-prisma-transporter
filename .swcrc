@@ -1,7 +1,4 @@
-const MODULE_TYPE = process.env.MODULE_TYPE
-
-/** @type import('@swc/core').Config */
-const config = {
+{
   "module": {
     "type": "es6"
   },
@@ -20,8 +17,6 @@ const config = {
       "legacyDecorator": true,
       "decoratorMetadata": true
     },
-    "target": "es2020",
+    "target": "es2018"
   }
 }
-
-module.exports = config
