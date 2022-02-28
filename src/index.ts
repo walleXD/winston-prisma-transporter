@@ -17,7 +17,6 @@ export interface ILogInfo {
  * @constructor
  * @param {Object} options Options for the Prisma & log plugin
  * @param {String} options.prisma Prisma client
- * @param {Object} **Optional** options.fields Log object, set custom fields for the log table
  * @param {String} **Optional** options.tableName Name of the table to log to
  * @param {Function} **Optional** options.log Custom log function
  * 
