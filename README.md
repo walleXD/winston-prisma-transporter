@@ -97,8 +97,8 @@ const logger = winston.createLogger({
     new PrismaWinstonTransporter({
       level: "http",
       prisma,
-      log: (info, prisma, callback) => {
-        // do something with info and meta
+      log: (info, callback) => {
+        // do whatever you need w/ info and callback
       }
     }),
   ],
@@ -112,7 +112,6 @@ export interface PrismaTransporterOptions extends TransportStreamOptions {
   tableName?: string;
   log?: (
     info: ILogInfo,
-    prisma: PrismaClient,
     callback?: (error?: Error, value?: unknown) => void
   ) => void;
 }

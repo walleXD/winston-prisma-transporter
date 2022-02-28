@@ -7,7 +7,6 @@ export interface PrismaTransporterOptions extends TransportStreamOptions {
   tableName?: string;
   log?: (
     info: ILogInfo,
-    prisma: PrismaClient,
     callback?: (error?: Error, value?: unknown) => void
   ) => void;
 }
@@ -63,7 +62,7 @@ export class PrismaWinstonTransporter extends Transport {
     callback?: (error?: Error, value?: unknown) => void
   ): void {
     if (this.customLogger) {
-      return this.customLogger(info, this.prismaClient, callback);
+      return this.customLogger(info, callback);
     }
 
     // get log content
