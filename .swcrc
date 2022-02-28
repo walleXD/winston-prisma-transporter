@@ -3,7 +3,6 @@
     "type": "es6"
   },
   "jsc": {
-    "externalHelpers": true,
     "parser": {
       "syntax": "typescript",
       "tsx": false,
