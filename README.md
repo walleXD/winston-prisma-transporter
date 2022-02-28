@@ -83,37 +83,11 @@ const logger = winston.createLogger({
 });
 ```
 
-Additionally, you can even pass in a custom log function, where prisma is passed in. This allows completely overriding the default behavior.
-
-```typescript
-import { createLogger, format } from "winston";
-import { PrismaClient } from "@prisma/client";
-import { PrismaWinstonTransporter } from "winston-prisma-transporter";
-
-const prisma = new PrismaClient();   
-const logger = winston.createLogger({
-  transports: [
-    format: format.json(),
-    new PrismaWinstonTransporter({
-      level: "http",
-      prisma,
-      log: (info, callback) => {
-        // do whatever you need w/ info and callback
-      }
-    }),
-  ],
-});
-```
-
 All options avaliable while initiating the transport:
 ```typescript
 export interface PrismaTransporterOptions extends TransportStreamOptions {
   prisma: PrismaClient;
   tableName?: string;
-  log?: (
-    info: ILogInfo,
-    callback?: (error?: Error, value?: unknown) => void
-  ) => void;
 }
 ```
 
