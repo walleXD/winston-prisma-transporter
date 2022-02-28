@@ -3,7 +3,7 @@ dist/types/index.d.ts.map
 node_modules
 .gitignore
 .nvmrc
-.swcrc.js
+.swcrc
 tsconfig.json
 tsconfig.build.json
 pnpm-lock.yaml
