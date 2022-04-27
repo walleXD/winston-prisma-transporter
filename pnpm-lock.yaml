@@ -5,7 +5,7 @@ specifiers:
   '@swc/cli': 0.1.57
   '@swc/core': 1.2.172
   '@swc/jest': 0.2.20
-  '@types/node': 16.11.26
+  '@types/node': 16.11.31
   deepmerge: 4.2.2
   jest: 28.0.2
   tslib: 2.3.1
@@ -21,9 +21,9 @@ devDependencies:
   '@swc/cli': 0.1.57_@swc+core@1.2.172
   '@swc/core': 1.2.172
   '@swc/jest': 0.2.20_@swc+core@1.2.172
-  '@types/node': 16.11.26
+  '@types/node': 16.11.31
   deepmerge: 4.2.2
-  jest: 28.0.2_@types+node@16.11.26
+  jest: 28.0.2_@types+node@16.11.31
   tslib: 2.3.1
   typescript: 4.6.3
   winston: 3.7.2
@@ -904,8 +904,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/node/16.11.26:
-    resolution: {integrity: sha512-GZ7bu5A6+4DtG7q9GsoHXy3ALcgeIHP4NnL0Vv2wu0uUB/yQex26v0tf6/na1mm0+bS9Uw+0DFex7aaKr2qawQ==}
+  /@types/node/16.11.31:
+    resolution: {integrity: sha512-wh/d0pcu/Ie2mqTIqh4tjd0mLAB4JWxOjHQtLN20HS7sjMHiV4Afr+90hITTyZcxowwha5wjv32jGEn1zkEFMg==}
     dev: true
 
   /@types/node/17.0.21:
@@ -1628,7 +1628,7 @@ packages:
       - supports-color
     dev: true
 
-  /jest-cli/28.0.2_@types+node@16.11.26:
+  /jest-cli/28.0.2_@types+node@16.11.31:
     resolution: {integrity: sha512-X6KSoKiSDZ07lds9awDMd14VUmtLS0sxgbUzZi1m6JewWdwXtuadTBff1kAUcAmKgJTYBPnVN0u2BKp7AIzllA==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -1645,7 +1645,7 @@ packages:
       exit: 0.1.2
       graceful-fs: 4.2.9
       import-local: 3.1.0
-      jest-config: 28.0.2_@types+node@16.11.26
+      jest-config: 28.0.2_@types+node@16.11.31
       jest-util: 28.0.2
       jest-validate: 28.0.2
       prompts: 2.4.2
@@ -1656,7 +1656,7 @@ packages:
       - ts-node
     dev: true
 
-  /jest-config/28.0.2_@types+node@16.11.26:
+  /jest-config/28.0.2_@types+node@16.11.31:
     resolution: {integrity: sha512-4E5r24Dw1DsyF4ObkwiDEqXIwrX7p01mnngWKtB/0Jdb0SpR1UGAm8Bjg6GTozCA4SlSj/Bbq7LTkg0WrzLanQ==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     peerDependencies:
@@ -1671,7 +1671,7 @@ packages:
       '@babel/core': 7.17.5
       '@jest/test-sequencer': 28.0.2
       '@jest/types': 28.0.2
-      '@types/node': 16.11.26
+      '@types/node': 16.11.31
       babel-jest: 28.0.2_@babel+core@7.17.5
       chalk: 4.1.2
       ci-info: 3.3.0
@@ -2018,7 +2018,7 @@ packages:
       supports-color: 8.1.1
     dev: true
 
-  /jest/28.0.2_@types+node@16.11.26:
+  /jest/28.0.2_@types+node@16.11.31:
     resolution: {integrity: sha512-COUtjybolW4koQvO7kCfq5kgbeeU5WbSJfVZprz4zbS8AL32+RAZZTUjBEyRRdpsXqss/pHIvSL7/P+LyMYHXg==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -2030,7 +2030,7 @@ packages:
     dependencies:
       '@jest/core': 28.0.2
       import-local: 3.1.0
-      jest-cli: 28.0.2_@types+node@16.11.26
+      jest-cli: 28.0.2_@types+node@16.11.31
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
