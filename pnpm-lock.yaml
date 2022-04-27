@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@prisma/client': 3.10.0
-  '@swc/cli': 0.1.55
+  '@swc/cli': 0.1.57
   '@swc/core': 1.2.172
   '@swc/jest': 0.2.20
   '@types/node': 16.11.26
@@ -18,7 +18,7 @@ dependencies:
 
 devDependencies:
   '@prisma/client': 3.10.0
-  '@swc/cli': 0.1.55_@swc+core@1.2.172
+  '@swc/cli': 0.1.57_@swc+core@1.2.172
   '@swc/core': 1.2.172
   '@swc/jest': 0.2.20_@swc+core@1.2.172
   '@types/node': 16.11.26
@@ -688,8 +688,8 @@ packages:
       '@sinonjs/commons': 1.8.3
     dev: true
 
-  /@swc/cli/0.1.55_@swc+core@1.2.172:
-    resolution: {integrity: sha512-akkLuRexFq8XTi6JNZ27mXD4wcKXLDSLj4g7YMU+/upFM8IeD1IEp1Mxtre7MzCZn+QOQgPF8N8IReJoHuSn3g==}
+  /@swc/cli/0.1.57_@swc+core@1.2.172:
+    resolution: {integrity: sha512-HxM8TqYHhAg+zp7+RdTU69bnkl4MWdt1ygyp6BDIPjTiaJVH6Dizn2ezbgDS8mnFZI1FyhKvxU/bbaUs8XhzQg==}
     engines: {node: '>= 12.13'}
     hasBin: true
     peerDependencies:
