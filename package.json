@@ -40,7 +40,7 @@
     "winston": "^3"
   },
   "devDependencies": {
-    "@prisma/client": "3.10.0",
+    "@prisma/client": "3.15.2",
     "@swc/cli": "0.1.57",
     "@swc/core": "1.2.172",
     "@swc/jest": "0.2.20",
