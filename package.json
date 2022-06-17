@@ -44,7 +44,7 @@
     "@swc/cli": "0.1.57",
     "@swc/core": "1.2.172",
     "@swc/jest": "0.2.20",
-    "@types/node": "16.11.31",
+    "@types/node": "16.11.41",
     "deepmerge": "4.2.2",
     "jest": "28.0.2",
     "tslib": "2.3.1",
