@@ -7,10 +7,19 @@ export interface PrismaTransporterOptions extends TransportStreamOptions {
   tableName?: string;
 }
 
+// JSONValue is a type that represents all valid JSON values
+type JSONValue =
+  | string
+  | number
+  | boolean
+  | { [x: string]: JSONValue }
+  | Array<JSONValue>;
+
 export interface ILogInfo {
   level: string;
   message: string;
-  meta?: Record<string, unknown>;
+  timestamp: Date;
+  meta?: JSONValue;
 }
 
 /**
@@ -19,9 +28,9 @@ export interface ILogInfo {
  * @param {String} options.prisma Prisma client
  * @param {String} **Optional** options.tableName Name of the table to log to
  * @param {Function} **Optional** options.log Custom log function
- * 
+ *
  * @returns {Object} Winston transport
- * 
+ *
  * Create Primsa Transport plugin for Winston
  */
 export class PrismaWinstonTransporter extends Transport {
@@ -42,18 +51,17 @@ export class PrismaWinstonTransporter extends Transport {
    * @msg {string} Message to log
    * @meta {Object} **Optional** Additional metadata to attach
    * @callback {function} Continuation to respond to when complete.
-   * 
+   *
    * @returns {undefined}
-   * 
+   *
    * Core logging method exposed to Winston. Metadata is optional.
    */
   log(
     info: ILogInfo,
     callback?: (error?: Error, value?: unknown) => void
   ): void {
-
     // get log content
-    const { level, message, meta } = info;
+    const { timestamp, level, message, ...meta } = info;
 
     process.nextTick(() => {
       // protect
@@ -62,14 +70,15 @@ export class PrismaWinstonTransporter extends Transport {
         callback = () => {};
       }
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
       this.prisma[this.tableName]
         .create({
           data: {
             level,
             message,
-            timestamp: new Date(),
-            meta,
-          },
+            timestamp: new Date(timestamp),
+            meta
+          }
         })
         .then(() => {
           setImmediate(() => {
